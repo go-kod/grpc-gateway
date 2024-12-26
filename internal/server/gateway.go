@@ -32,7 +32,11 @@ func (ins *server) Init(ctx context.Context) error {
 		if err != nil {
 			return err
 		}
+	}
 
+	err := cfg.Engine.Otel.Init(ctx)
+	if err != nil {
+		return err
 	}
 
 	return nil

@@ -3,6 +3,7 @@ package config
 import (
 	"github.com/go-kod/kod"
 	"github.com/go-kod/kod-ext/client/kgrpc"
+	"github.com/go-kod/kod-ext/core/otel"
 	"github.com/go-kod/kod-ext/core/pyroscope"
 	"github.com/go-kod/kod-ext/registry/etcdv3"
 )
@@ -19,7 +20,7 @@ type ConfigInfo struct {
 }
 
 type Pyroscope struct {
-	pyroscope.Config `mapstructure:",squash"`
+	pyroscope.Config `koanf:",squash"`
 	Enable           bool
 }
 
@@ -35,6 +36,7 @@ type JwtClaimToHeader struct {
 }
 
 type EngineConfig struct {
+	Otel           otel.Config
 	Pyroscope      Pyroscope
 	RateLimit      bool
 	CircuitBreaker bool

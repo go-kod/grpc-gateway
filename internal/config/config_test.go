@@ -21,7 +21,7 @@ func TestConfig(t *testing.T) {
 
 				Pyroscope: Pyroscope{
 					Enable: true,
-					Config: pyroscope.Config{ServerAddress: ""},
+					Config: pyroscope.Config{ServerAddress: "http://localhost:4040"},
 				},
 			},
 			Server: ServerConfig{
