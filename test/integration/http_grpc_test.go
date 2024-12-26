@@ -64,7 +64,7 @@ func TestHTTP2Grpc(t *testing.T) {
 			assert.Equal(t, http.StatusOK, rec.Code)
 			assert.Equal(t, "application/json; charset=utf-8", rec.Header().Get("Content-Type"))
 			assert.Equal(t, "{\"message\":\"Hello bob\"}", rec.Body.String())
-		}, kod.WithFakes(kod.Fake[config.Config](mockConfig)), kod.WithOpenTelemetryDisabled())
+		}, kod.WithFakes(kod.Fake[config.Config](mockConfig)))
 	})
 
 	t.Run("not found", func(t *testing.T) {
@@ -79,7 +79,7 @@ func TestHTTP2Grpc(t *testing.T) {
 			assert.Equal(t, http.StatusNotFound, rec.Code)
 			assert.Equal(t, "text/plain; charset=utf-8", rec.Header().Get("Content-Type"))
 			assert.Equal(t, "404 page not found\n", rec.Body.String())
-		}, kod.WithFakes(kod.Fake[config.Config](mockConfig)), kod.WithOpenTelemetryDisabled())
+		}, kod.WithFakes(kod.Fake[config.Config](mockConfig)))
 	})
 
 	t.Run("error", func(t *testing.T) {
@@ -94,7 +94,7 @@ func TestHTTP2Grpc(t *testing.T) {
 			assert.Equal(t, http.StatusOK, rec.Code)
 			assert.Equal(t, "application/json; charset=utf-8", rec.Header().Get("Content-Type"))
 			assert.Equal(t, `{"code":2,"message":"error","details":[]}`, rec.Body.String())
-		}, kod.WithFakes(kod.Fake[config.Config](mockConfig)), kod.WithOpenTelemetryDisabled())
+		}, kod.WithFakes(kod.Fake[config.Config](mockConfig)))
 	})
 
 	t.Run("http body", func(t *testing.T) {
@@ -109,7 +109,7 @@ func TestHTTP2Grpc(t *testing.T) {
 			assert.Equal(t, http.StatusOK, rec.Code)
 			assert.Equal(t, "application/json; charset=utf-8", rec.Header().Get("Content-Type"))
 			assert.Equal(t, `{"message":"Hello sam"}`, rec.Body.String())
-		}, kod.WithFakes(kod.Fake[config.Config](mockConfig)), kod.WithOpenTelemetryDisabled())
+		}, kod.WithFakes(kod.Fake[config.Config](mockConfig)))
 	})
 
 	t.Run("invalid http body", func(t *testing.T) {
@@ -124,7 +124,7 @@ func TestHTTP2Grpc(t *testing.T) {
 			assert.Equal(t, http.StatusBadRequest, rec.Code)
 			assert.Equal(t, "text/plain; charset=utf-8", rec.Header().Get("Content-Type"))
 			assert.Equal(t, "rpc error: code = InvalidArgument desc = invalid character 'i' looking for beginning of object key string\n", rec.Body.String())
-		}, kod.WithFakes(kod.Fake[config.Config](mockConfig)), kod.WithOpenTelemetryDisabled())
+		}, kod.WithFakes(kod.Fake[config.Config](mockConfig)))
 	})
 }
 
@@ -168,6 +168,6 @@ func TestHTTP2Grpc_Singleflight(t *testing.T) {
 			assert.Equal(t, http.StatusOK, rec.Code)
 			assert.Equal(t, "application/json; charset=utf-8", rec.Header().Get("Content-Type"))
 			assert.Equal(t, "{\"message\":\"Hello bob\"}", rec.Body.String())
-		}, kod.WithFakes(kod.Fake[config.Config](mockConfig)), kod.WithOpenTelemetryDisabled())
+		}, kod.WithFakes(kod.Fake[config.Config](mockConfig)))
 	})
 }

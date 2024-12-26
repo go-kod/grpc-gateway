@@ -7,7 +7,7 @@ import (
 
 	"github.com/go-kod/kod"
 	"github.com/go-kod/kod-ext/client/kgrpc"
-	"github.com/go-kod/kod-ext/client/kpyroscope"
+	"github.com/go-kod/kod-ext/core/pyroscope"
 	"github.com/go-kod/kod-ext/registry/etcdv3"
 	"github.com/stretchr/testify/require"
 )
@@ -21,7 +21,7 @@ func TestConfig(t *testing.T) {
 
 				Pyroscope: Pyroscope{
 					Enable: true,
-					Config: kpyroscope.Config{ServerAddress: "http://localhost:4040"},
+					Config: pyroscope.Config{ServerAddress: ""},
 				},
 			},
 			Server: ServerConfig{

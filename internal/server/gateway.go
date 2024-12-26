@@ -9,7 +9,6 @@ import (
 
 	"github.com/go-kod/grpc-gateway/internal/config"
 	"github.com/go-kod/kod"
-	"github.com/grafana/pyroscope-go"
 	"github.com/hashicorp/golang-lru/v2/expirable"
 	"github.com/nautilus/gateway"
 	"github.com/nautilus/graphql"
@@ -18,8 +17,6 @@ import (
 
 type server struct {
 	kod.Implements[Gateway]
-
-	profiler *pyroscope.Profiler
 
 	config       kod.Ref[config.Config]
 	_            kod.Ref[GraphqlCaller]
@@ -31,22 +28,17 @@ type server struct {
 func (ins *server) Init(ctx context.Context) error {
 	cfg := ins.config.Get().Config()
 	if cfg.Engine.Pyroscope.Enable {
-		profiler, err := ins.config.Get().Config().Engine.Pyroscope.Build(ctx)
+		err := ins.config.Get().Config().Engine.Pyroscope.Init(ctx)
 		if err != nil {
 			return err
 		}
 
-		ins.profiler = profiler
 	}
 
 	return nil
 }
 
 func (ins *server) Shutdown(ctx context.Context) error {
-	if ins.profiler != nil {
-		_ = ins.profiler.Stop()
-	}
-
 	return nil
 }
 
