@@ -18,13 +18,13 @@ require (
 	github.com/nautilus/graphql v0.0.26
 	github.com/samber/lo v1.47.0
 	github.com/stretchr/testify v1.10.0
-	github.com/vektah/gqlparser/v2 v2.5.20
+	github.com/vektah/gqlparser/v2 v2.5.21
 	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp v0.58.0
 	go.uber.org/mock v0.5.0
 	golang.org/x/sync v0.10.0
 	google.golang.org/genproto/googleapis/api v0.0.0-20241104194629-dd2ea8efbc28
 	google.golang.org/grpc v1.69.2
-	google.golang.org/protobuf v1.36.0
+	google.golang.org/protobuf v1.36.1
 )
 
 require (
