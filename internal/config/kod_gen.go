@@ -11,7 +11,10 @@ import (
 )
 
 // Full method names for components.
-const ()
+const (
+	// Config_ComponentName is the full name of the component [Config].
+	Config_ComponentName = "github.com/go-kod/grpc-gateway/internal/config/Config"
+)
 
 func init() {
 	kod.Register(&kod.Registration{

@@ -18,14 +18,28 @@ import (
 
 // Full method names for components.
 const (
+	// Gateway_ComponentName is the full name of the component [Gateway].
+	Gateway_ComponentName = "github.com/go-kod/grpc-gateway/internal/server/Gateway"
+	// GraphqlCaller_ComponentName is the full name of the component [GraphqlCaller].
+	GraphqlCaller_ComponentName = "github.com/go-kod/grpc-gateway/internal/server/GraphqlCaller"
 	// GraphqlCaller_Call_FullMethodName is the full name of the method [graphqlCaller.Call].
 	GraphqlCaller_Call_FullMethodName = "github.com/go-kod/grpc-gateway/internal/server/GraphqlCaller.Call"
+	// GraphqlCallerRegistry_ComponentName is the full name of the component [GraphqlCallerRegistry].
+	GraphqlCallerRegistry_ComponentName = "github.com/go-kod/grpc-gateway/internal/server/GraphqlCallerRegistry"
+	// GraphqlReflection_ComponentName is the full name of the component [GraphqlReflection].
+	GraphqlReflection_ComponentName = "github.com/go-kod/grpc-gateway/internal/server/GraphqlReflection"
 	// GraphqlReflection_ListPackages_FullMethodName is the full name of the method [graphqlReflection.ListPackages].
 	GraphqlReflection_ListPackages_FullMethodName = "github.com/go-kod/grpc-gateway/internal/server/GraphqlReflection.ListPackages"
+	// GraphqlQueryer_ComponentName is the full name of the component [GraphqlQueryer].
+	GraphqlQueryer_ComponentName = "github.com/go-kod/grpc-gateway/internal/server/GraphqlQueryer"
 	// GraphqlQueryer_Query_FullMethodName is the full name of the method [graphqlQueryer.Query].
 	GraphqlQueryer_Query_FullMethodName = "github.com/go-kod/grpc-gateway/internal/server/GraphqlQueryer.Query"
+	// HttpUpstreamInvoker_ComponentName is the full name of the component [HttpUpstreamInvoker].
+	HttpUpstreamInvoker_ComponentName = "github.com/go-kod/grpc-gateway/internal/server/HttpUpstreamInvoker"
 	// HttpUpstreamInvoker_Invoke_FullMethodName is the full name of the method [httpUpstreamInvoker.Invoke].
 	HttpUpstreamInvoker_Invoke_FullMethodName = "github.com/go-kod/grpc-gateway/internal/server/HttpUpstreamInvoker.Invoke"
+	// HttpUpstream_ComponentName is the full name of the component [HttpUpstream].
+	HttpUpstream_ComponentName = "github.com/go-kod/grpc-gateway/internal/server/HttpUpstream"
 	// HttpUpstream_Register_FullMethodName is the full name of the method [httpUpstream.Register].
 	HttpUpstream_Register_FullMethodName = "github.com/go-kod/grpc-gateway/internal/server/HttpUpstream.Register"
 )
